@@ -14,6 +14,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# aquí se importan las credenciales a la base de datos de manera secreta
 with open("secret.json") as f:
     secret = json.loads(f.read())
 
@@ -36,13 +37,15 @@ DJANGO_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 )
-
+# por cada aplicación nueva, se debe incluir la url aquí debajo
+# aquí se importan las carpetas de las aplicaciones locales que se usan en el proyecto
 LOCAL_APPS = (
     'applications.dpto',
     'applications.mupio',
     'applications.mupiopolitico',
     'applications.gbif',
     'applications.user',
+    'applications.cars',
 )
 
 THIRD_PARTY_APPS = (
